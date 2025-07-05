@@ -25,4 +25,4 @@ jobs:
 
       - name: 🚀 Trigger Render Deploy (UI + API)
         run: |
-          echo "Deploy initiated. Manually trigger redeploy from Render UI or integrate Render Deploy Hook if available."
+          curl -X POST https://api.render.com/deploy/srv-abc1234567890abcdef
