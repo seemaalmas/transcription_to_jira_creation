@@ -3,3 +3,4 @@ uvicorn
 python-docx
 openai
 dotenv
+python-multipart
