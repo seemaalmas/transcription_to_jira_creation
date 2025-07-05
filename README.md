@@ -1,0 +1,125 @@
+Great! You're almost deployment-ready. Let's do the following:
+
+---
+
+## ✅ 1. Add `README.md` to Document Your Project
+
+Here’s a simple and clean **`README.md`** to include in your root folder:
+
+### 📄 `README.md`
+
+```markdown
+# 🧠 LLM-Based Transcript-to-Task Agent (API-Driven)
+
+This project extracts actionable tasks from meeting transcripts (`.txt`, `.docx`, `.vtt`) using LLMs (Groq via OpenAI-compatible API) and serves it via a FastAPI backend + Streamlit frontend.
+
+---
+
+## 📂 Project Structure
+
+```
+
+AGENT\_POC/
+├── backend/
+│   ├── api.py                # FastAPI backend
+│   ├── prompts.py            # LLM prompts
+│   ├── task\_extractor.py     # Extract tasks using Groq LLaMA 3
+│   ├── task\_refiner.py       # Refine tasks into clear output
+│   ├── transcript\_reader.py  # Load & parse .txt, .docx, .vtt
+│   ├── main.py               # Optional local runner
+│   ├── requirements.txt      # Backend requirements
+│   └── .env                  # Contains GROQ\_API\_KEY
+│
+├── frontend/
+│   ├── app.py                # Streamlit UI
+│   ├── requirements.txt      # Frontend requirements
+│   └── venv/                 # Frontend virtual environment
+
+````
+
+---
+
+## 🚀 Setup Instructions
+
+### 🔧 1. Backend Setup (FastAPI)
+
+```bash
+cd backend
+python -m venv venv
+venv\Scripts\activate    # On Windows
+source venv/bin/activate # On Mac/Linux
+
+pip install -r requirements.txt
+uvicorn api:app --reload --port 8000
+````
+
+✅ Create `.env` in `backend/`:
+
+```env
+GROQ_API_KEY=your_groq_api_key
+```
+
+---
+
+### 🎨 2. Frontend Setup (Streamlit)
+
+```bash
+cd frontend
+python -m venv venv
+venv\Scripts\activate    # On Windows
+source venv/bin/activate # On Mac/Linux
+
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+---
+
+## 📤 Deployment
+
+* Backend: Deploy `FastAPI` as a Render web service.
+* Frontend: Deploy `Streamlit` on Render or use Docker for both.
+
+````
+
+Save this as `README.md` in the root folder.
+
+---
+
+## ✅ 2. GitHub Push – Full Command List
+
+### 🔹 Step-by-Step
+
+```bash
+# 1. Initialize Git
+cd AGENT_POC
+git init
+
+# 2. Add remote (replace with your GitHub repo URL)
+git remote add origin https://github.com/your-username/your-repo-name.git
+
+# 3. Stage all files
+git add .
+
+# 4. Commit
+git commit -m "Initial commit: Added FastAPI backend and Streamlit frontend for transcript-to-task agent"
+
+# 5. Push to GitHub
+git branch -M main
+git push -u origin main
+````
+
+---
+
+## 🧪 Bonus Tip: Git Ignore Virtual Envs
+
+Add a `.gitignore` file in `AGENT_POC/` with:
+
+```
+# Ignore virtual environments
+**/venv/
+*.env
+__pycache__/
+```
+
+---
