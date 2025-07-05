@@ -59,15 +59,6 @@ source venv/bin/activate # On Mac/Linux
 pip install -r requirements.txt
 streamlit run app.py
 ```
-
----
-
-## 📤 Deployment
-
-* Backend: Deploy `FastAPI` as a Render web service.
-* Frontend: Deploy `Streamlit` on Render or use Docker for both.
-
-
 ### 🔹 Step-by-Step
 
 ```bash
