@@ -1,5 +1,5 @@
 from openai import OpenAI
-from prompts import TASK_REFINEMENT_PROMPT
+from backend.prompts import TASK_REFINEMENT_PROMPT
 import os
 from dotenv import load_dotenv
 load_dotenv()
