@@ -1,19 +1,6 @@
-Great! You're almost deployment-ready. Let's do the following:
-
----
-
-## ✅ 1. Add `README.md` to Document Your Project
-
-Here’s a simple and clean **`README.md`** to include in your root folder:
-
-### 📄 `README.md`
-
-```markdown
 # 🧠 LLM-Based Transcript-to-Task Agent (API-Driven)
 
 This project extracts actionable tasks from meeting transcripts (`.txt`, `.docx`, `.vtt`) using LLMs (Groq via OpenAI-compatible API) and serves it via a FastAPI backend + Streamlit frontend.
-
----
 
 ## 📂 Project Structure
 
@@ -72,22 +59,6 @@ source venv/bin/activate # On Mac/Linux
 pip install -r requirements.txt
 streamlit run app.py
 ```
-
----
-
-## 📤 Deployment
-
-* Backend: Deploy `FastAPI` as a Render web service.
-* Frontend: Deploy `Streamlit` on Render or use Docker for both.
-
-````
-
-Save this as `README.md` in the root folder.
-
----
-
-## ✅ 2. GitHub Push – Full Command List
-
 ### 🔹 Step-by-Step
 
 ```bash
@@ -107,19 +78,3 @@ git commit -m "Initial commit: Added FastAPI backend and Streamlit frontend for 
 # 5. Push to GitHub
 git branch -M main
 git push -u origin main
-````
-
----
-
-## 🧪 Bonus Tip: Git Ignore Virtual Envs
-
-Add a `.gitignore` file in `AGENT_POC/` with:
-
-```
-# Ignore virtual environments
-**/venv/
-*.env
-__pycache__/
-```
-
----
