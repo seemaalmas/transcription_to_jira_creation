@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: transcript-agent-ui
+    env: python
+    buildCommand: pip install -r frontend/requirements.txt
+    startCommand: streamlit run frontend/app.py --server.port=10000 --server.enableCORS=false
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false
+    plan: free
+
+  - type: web
+    name: transcript-agent-api
+    env: python
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: uvicorn api:app --host 0.0.0.0 --port 8000
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false
+    plan: free
