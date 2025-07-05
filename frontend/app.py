@@ -11,7 +11,7 @@ uploaded_file = st.file_uploader("📂 Upload transcript file", type=["txt", "do
 if uploaded_file and st.button("🔍 Extract Tasks (via API)"):
     with st.spinner("Calling backend API..."):
         files = {"file": (uploaded_file.name, uploaded_file, uploaded_file.type)}
-        response = requests.post("http://localhost:8000/extract-refine-from-file", files=files)
+        response = requests.post("https://transcript-agent-api.onrender.com/extract-refine-from-file", files=files)
 
         if response.status_code == 200:
             data = response.json()
