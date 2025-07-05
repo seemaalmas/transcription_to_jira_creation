@@ -3,9 +3,9 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 
+from  backend.transcript_reader import read_txt, read_docx, read_vtt
 from backend.task_extractor import extract_tasks
 from backend.task_refiner import refine_tasks
-from backend.prompts import SYSTEM_PROMPT
 
 app = FastAPI()
 
