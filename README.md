@@ -37,7 +37,12 @@ venv\Scripts\activate    # On Windows
 source venv/bin/activate # On Mac/Linux
 
 pip install -r requirements.txt
-uvicorn api:app --reload --port 8000
+uvicorn backend.api:app --reload --port 8000
+
+If you face issue in local then run below command from root folder
+set OPENAI_API_KEY=your-api-key-here
+uvicorn backend.api:app --reload
+
 ````
 
 ✅ Create `.env` in `backend/`:
