@@ -38,7 +38,7 @@ if st.session_state.refined_tasks:
         for task in st.session_state.refined_tasks:
             task = task.replace("•", "").strip()
             response = requests.post(
-                "http://localhost:8000/create-jira-task",
+                "https://transcript-agent-api.onrender.com/create-jira-task",
                 json={"summary": task[:100], "description": task}
             )
             try:
